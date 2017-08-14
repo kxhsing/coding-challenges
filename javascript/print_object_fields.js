@@ -8,7 +8,7 @@ var people = {
 function print_field_values(people) {
 
 var people_ids = Object.keys(people);
-var fields = Object.keys(people[people_ids[0]])
+var fields = Object.keys(people[people_ids[0]]);
 
 
 output = {}
