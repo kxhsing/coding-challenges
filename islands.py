@@ -1,0 +1,24 @@
+def count_islands(grid):
+    """Given an array of arrays with 1's and 0's, count how many islands there are"""
+    if not grid:
+        return 0
+    count = 0
+    for i in range(len(grid)):
+        for j in range(len(grid[0])):
+            if grid[i][j] == 1:
+                dfs(grid, i, j)
+                count += 1
+
+
+    return count
+
+
+def dfs(grid, i, j):
+    if i < 0 or j < 0 or i >= len(grid) or j >= len(grid[0]) or grid[i][j] != 1:
+        return
+
+    grid[i][j] = "#" #change so we don't recheck the same block
+    dfs(grid, i+1, j)
+    dfs(grid, i-1, j)
+    dfs(grid, i, j+1)
+    dfs(grid, i, j-1)
